@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ChromeComponent } from './chrome/chrome.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [ChromeComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']  // Use styleUrls instead of styleUrl
 })
 export class AppComponent {
-  title = 'rasPortfolio';
+  title = 'CDM Portfolio';
 }

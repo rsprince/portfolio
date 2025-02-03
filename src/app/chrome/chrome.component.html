@@ -1,0 +1,36 @@
+<mat-toolbar>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/home']">
+        <span>Home</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/web']">
+        <span>Web</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/mobile']">
+        <span>Mobile</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/tablet']">
+        <span>Tablet</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/documents']">
+        <span>Documents</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/contact']">
+        <span>Contact</span>
+      </button>
+    </mat-menu>
+    <span>
+      <h1>
+        <code>
+          Creative Digital Media, Inc.
+        </code>
+      </h1>
+    </span>
+    <span class="spacer"></span>
+</mat-toolbar>
+<main>
+  <router-outlet></router-outlet>
+</main>

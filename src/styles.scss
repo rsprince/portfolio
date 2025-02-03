@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  height: 100%;
+}
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.page-wrapper {
+	padding: 100px 40px
+}
+
+// css for thumbnail images and overlay
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+/* Automatically adjust the number of images per row */
+.image-item {
+  flex: 1 1 min(20%, 200px); /* Each image takes up 20% of the row but won’t exceed 200px */
+  max-width: 200px; /* Ensures images don’t stretch too much */
+}
+
+.image-item img {
+  width: 100%;               /* Maintain full width within the flex/grid item */
+  height: 150px;             /* Set a fixed height to prevent vertical stretching */
+  object-fit: cover;         /* Ensures the image fills the space without distortion */
+  border-radius: 8px;        /* Keeps rounded corners */
+  transition: transform 0.2s ease-in-out; /* Smooth zoom effect on hover */
+  border: 1px solid #666;
+  box-shadow: 4px 4px 8px -2px black;
+}
+
+/* ✅ Special styles for vertical layout */
+.vertical-image-item {
+  // flex: 1 1 100%; /* Forces one image per row */
+  flex: 1 1 min(20%, 200px);
+  max-width: 260px; /* Allows mobile screenshots to be larger */
+  margin: 10px auto; /* Center align */
+}
+
+.vertical-image-item img {
+  width: 100%; /* Maintain full width */
+  height: 200px; /* Let the height adjust naturally */
+  max-height: 200px; /* Prevent overly tall images */
+  object-fit: contain; /* Ensure full image is displayed */
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Full-size Image Overlay */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Full-size Image */
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+
+// tablet layout
+@media (max-width: 1024px) {
+  .image-item {
+    flex: 1 1 calc(33% - 20px); /* 3 images per row */
+    max-width: calc(33% - 20px);
+  }
+}
+
+// phone layout
+@media (max-width: 600px) {
+  .image-item {
+    flex: 1 1 100%; /* 1 image per row */
+    max-width: 100%;
+  }
+  .image-item img {
+    height: auto;
+  }
+}
+

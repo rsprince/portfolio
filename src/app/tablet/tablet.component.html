@@ -1,0 +1,24 @@
+<div class="page-wrapper">
+	<h1>Tablet/Kiosk</h1>
+
+		<div class="image-container">
+				<!-- inline "for" syntax, now a function, track image/image.id, etc. improves performance -->
+				@for (image of imageList; track image) {
+						<div class="image-item" (click)="openImage(image)">
+								<img src="images/tablet/{{ image }}" loading="lazy" alt="Thumbnail">
+						</div>
+				}
+		</div>
+
+		<!-- Full-size Image Overlay -->
+		<div class="image-overlay" [class.show]="isOverlayVisible" (click)="closeImage()">
+				@if (selectedImage) {
+						<img [src]="selectedImage" alt="Full-size Image">
+				}
+		</div>
+  
+  
+  
+  
+</div>
+  
