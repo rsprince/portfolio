@@ -47,10 +47,10 @@ export class TabletComponent {
     "ActionBar-Calendar.jpg",
     "ActionBar-Grievances.jpg",
     "Kiosk-Home-notifications.jpg",
-    "_attract-1-date-location.jpg",
-    "_attract-2-time-weather.jpg",
-    "_attract-fact1-question.jpg",
-    "_attract-fact2-answer.jpg",
+    "attract-1-date-location.jpg",
+    "attract-2-time-weather.jpg",
+    "attract-fact1-question.jpg",
+    "attract-fact2-answer.jpg",
     "JP4-home.jpg",
   ];
 
